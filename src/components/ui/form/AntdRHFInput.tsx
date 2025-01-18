@@ -1,4 +1,4 @@
-import { Input } from 'antd';
+import { Form, Input } from 'antd';
 import { Controller } from 'react-hook-form';
 
 type TInputProps = {
@@ -11,16 +11,12 @@ type TInputProps = {
 export default function AntdRHFInput({ type, name, label }: TInputProps) {
   return (
     <div style={{ marginBottom: '20px' }}>
-      {label ? <label htmlFor={name}>{label}</label> : null}
       <Controller
         name={name}
         render={({ field }) => (
-          <Input
-            {...field}
-            type={type}
-            id={name}
-            style={{ marginTop: '5px' }}
-          />
+          <Form.Item label={label}>
+            <Input {...field} type={type} id={name} />
+          </Form.Item>
         )}
       />
     </div>
