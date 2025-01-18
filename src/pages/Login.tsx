@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button, Row } from 'antd';
 import AntdRHFInput from '../components/ui/form/AntdRHFInput';
 import AntdRHForm from '../components/ui/form/AntdRHForm';
 
@@ -8,8 +8,7 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login Form</h1>
+    <Row justify='center' align='middle' style={{ height: '100vh' }}>
       <div>
         <AntdRHForm onSubmit={onSubmit}>
           <AntdRHFInput label='Email: ' type='text' name='email' />
@@ -17,6 +16,6 @@ export default function Login() {
           <Button htmlType='submit'>Login</Button>
         </AntdRHForm>
       </div>
-    </div>
+    </Row>
   );
 }
