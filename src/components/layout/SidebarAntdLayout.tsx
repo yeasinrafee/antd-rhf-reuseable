@@ -8,6 +8,10 @@ const items = [
     key: 'login',
     label: <NavLink to='/login'>Login</NavLink>,
   },
+  {
+    key: 'registration',
+    label: <NavLink to='/registration'>Registration</NavLink>,
+  },
 ];
 
 export default function SidebarAntdLayout() {
