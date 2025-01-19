@@ -1,9 +1,13 @@
 import { Layout, Menu } from 'antd';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const items = [
+  {
+    key: 'home',
+    label: <NavLink to='/'>Home</NavLink>,
+  },
   {
     key: 'login',
     label: <NavLink to='/login'>Login</NavLink>,
@@ -54,11 +58,12 @@ export default function SidebarAntdLayout() {
               minHeight: 360,
             }}
           >
-            content
+            {/* Content will go here.. */}
+            <Outlet />
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Reuseable Component ©{new Date().getFullYear()} Created Yeasin Rafee
         </Footer>
       </Layout>
     </Layout>

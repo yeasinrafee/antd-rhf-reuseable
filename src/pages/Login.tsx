@@ -1,4 +1,4 @@
-import { Button, Row } from 'antd';
+import { Button, Col, Row } from 'antd';
 import AntdRHFInput from '../components/ui/form/AntdRHFInput';
 import AntdRHForm from '../components/ui/form/AntdRHForm';
 import { FieldValues } from 'react-hook-form';
@@ -9,8 +9,8 @@ export default function Login() {
   };
 
   return (
-    <Row justify='center' align='middle' style={{ height: '100vh' }}>
-      <div>
+    <Row justify='center' align='top' style={{ height: '100vh' }}>
+      <Col span={7}>
         <AntdRHForm
           // MUST** We have to pass an onSubmit function
           onSubmit={onSubmit}
@@ -26,7 +26,7 @@ export default function Login() {
           <AntdRHFInput label='Password: ' type='text' name='password' />
           <Button htmlType='submit'>Login</Button>
         </AntdRHForm>
-      </div>
+      </Col>
     </Row>
   );
 }

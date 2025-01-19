@@ -36,7 +36,7 @@ export default function Registration() {
           <AntdRHFInput type='text' name='name' label='Name' />
           <AntdRHFInput type='text' name='email' label='Email' />
           <AntdRHFSelect name='gender' label='Gender' options={genderOptions} />
-          <Button htmlType='submit'>Submit</Button>
+          <Button htmlType='submit'>Sign up</Button>
         </AntdRHForm>
       </Col>
     </Flex>
