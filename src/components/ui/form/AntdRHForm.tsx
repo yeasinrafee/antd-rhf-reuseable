@@ -9,6 +9,7 @@ import {
 
 type TFormConfig = {
   defaultValues?: Record<string, any>;
+  resolver?: any;
 };
 
 type TFormProps = {
@@ -20,11 +21,19 @@ export default function AntdRHForm({
   onSubmit,
   children,
   defaultValues,
+  resolver,
 }: TFormProps) {
   //For Default Values (Default values will take an object where we have to pass the property name as the input field name).
   const fromConfig: TFormConfig = {};
+
+  // For Default value checking
   if (defaultValues) {
     fromConfig['defaultValues'] = defaultValues;
+  }
+
+  // For Zod resolver checking
+  if (resolver) {
+    fromConfig['resolver'] = resolver;
   }
 
   const methods = useForm(fromConfig);

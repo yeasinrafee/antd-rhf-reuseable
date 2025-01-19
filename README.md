@@ -43,3 +43,7 @@ label: 'Teacher'
 ]
 }
 ]
+
+## Installation
+
+zod @hookform/resolvers
