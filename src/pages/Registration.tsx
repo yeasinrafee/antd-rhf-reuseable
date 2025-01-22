@@ -5,6 +5,7 @@ import { FieldValues, SubmitHandler } from 'react-hook-form';
 import { Button, Col, Flex } from 'antd';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import AntdRHFDatePicker from '../components/ui/form/AntdRHFDatePicker';
 
 const genderOptions = [
   {
@@ -31,6 +32,9 @@ const registrationSchema = z.object({
   name: z.string({ required_error: 'Please fill with a Name!' }),
   email: z.string({ required_error: 'Please fill with an Email!' }),
   gender: z.string({ required_error: 'Please fill with a Gender!' }),
+  dateOfBirth: z.string({
+    required_error: 'Please fill with a Date of Birth!',
+  }),
 });
 
 const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -48,6 +52,8 @@ export default function Registration() {
           <AntdRHFInput type='text' name='name' label='Name' />
           <AntdRHFInput type='text' name='email' label='Email' />
           <AntdRHFSelect name='gender' label='Gender' options={genderOptions} />
+          <AntdRHFDatePicker name='dateOfBirth' label='Date of Birth' />
+          <AntdRHFInput type='file' name='image' label='Picture' />
           <Button htmlType='submit'>Sign up</Button>
         </AntdRHForm>
       </Col>
